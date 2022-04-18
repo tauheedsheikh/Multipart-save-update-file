@@ -1,10 +1,10 @@
 package com.alzohar.document.entity;
 
-public class ResponseMessage {
+public class PanCardResponseM {
 
 	private String message;
 
-	public ResponseMessage(String message) {
+	public PanCardResponseM(String message) {
 		this.message = message;
 	}
 

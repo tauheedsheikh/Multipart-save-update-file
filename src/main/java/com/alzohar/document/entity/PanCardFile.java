@@ -1,5 +1,6 @@
 package com.alzohar.document.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -16,17 +17,30 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "files_service")
-public class FileDB {
+@Table(name = "pancard_service")
+public class PanCardFile {
+
 	@Id
 	@GeneratedValue(generator = "uuid")
 	@GenericGenerator(name = "uuid", strategy = "uuid2")
 	private String id;
-	private String name;
-	private String type;
-	@Lob
-	private byte[] data;
+	@Column(name = "pan_name")
+	private String panName;
 
-	
-	
+	@Column(name = "date_of_birth")
+	private String dateOfBirth;
+
+	@Column(name = "pan_card_no")
+	private String panCardNo;
+
+	@Column(name = "address")
+	private String address;
+
+	@Column(name = "city")
+	@Lob
+	private String city;
+
+	@Lob
+	private byte[] photo;
+
 }
